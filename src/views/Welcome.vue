@@ -2,8 +2,8 @@
 	<main>
 		<h1>Login Success</h1>
 
-		<p id="WelcomeMessage"></p>
-		<pre id="UserInfo"></pre>
+		<p>{{ welcomeMessage }}</p>
+		<pre>{{ userInfo }}</pre>
 
 		<router-link to="/update-profile">Update Profile</router-link>
 
@@ -20,10 +20,13 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import { skapi } from '../main.js';
 
 const router = useRouter();
+
+let userInfo = ref('');
+let welcomeMessage = ref('');
 
 onMounted(() => {
 	/* 
@@ -31,16 +34,10 @@ onMounted(() => {
     */
     skapi.getProfile().then(user => {
         if (user) {
-            let welcomeMessage = document.getElementById("WelcomeMessage");
-            if (welcomeMessage) {
-                welcomeMessage.innerHTML = `Welcome, ${user.name || user.email || user.user_id}!`;
-            }
+			welcomeMessage.value = `Welcome, ${user.name || user.email || user.user_id}!`;
 
-            let userInfo = document.getElementById("UserInfo");
-            if (userInfo) {
-                userInfo.innerHTML = JSON.stringify(user, null, 2);
-            }
-        }
+			userInfo.value = JSON.stringify(user, null, 2);
+		}
     });
 });
 </script>
