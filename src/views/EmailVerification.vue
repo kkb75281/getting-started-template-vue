@@ -35,12 +35,14 @@ import { skapi } from '../main.js';
 const router = useRouter();
 let user;
 
-let resend = () => {
+let resend = (event) => {
 	let userConfirm = confirm(`We will send a verification email to ${user.email}. Continue?`);
+	let parentElement = event.target.parentElement;
+	
 	if (userConfirm) {
-		skapi.verifyEmail()
-			.then(()=>this.parentElement.innerHTML = 'Verification email has been sent.')
-			.catch(err=>alert(err.message));
+		skapi.verifyEmail().then(() => {
+			parentElement.innerHTML = 'Verification email has been sent.'
+		}).catch(err=>alert(err.message));
 	}
 }
 

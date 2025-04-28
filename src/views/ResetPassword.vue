@@ -14,7 +14,15 @@
 		</p>
 
 		<form @submit.prevent="resetPassword">
-			<input type="email" name="email" placeholder="E-Mail" required hidden>
+			<!-- 
+				The email address is passed from the forgot password page.
+				We can get the email address from the hash of the url.
+				The hash is the part of the url after the # sign.
+				We can get the hash using location.hash.
+				Then, we can set the value of the email input field for the user.
+				Email input field is hidden but it is required for the reset password method. 
+			-->
+			<input type="email" name="email" :value="email" placeholder="E-Mail" required hidden>
 			<table>
 				<tbody>
 					<tr>
@@ -54,15 +62,18 @@ const router = useRouter();
 
 let email = location.hash.slice(1);
 
-let resend = () => {
+let resend = (event) => {
 	/*
 		When this is clicked, we will manually execute the skapi.forgotPassword() method to re-send the verification code to the user's email address.
 		When successful, we will replace the content of the parent element of this element with a message: Verification code has been sent.
 	*/
+	
+	let parentElement = event.currentTarget.parentElement;
 	let userConfirm = confirm(`We will send a verification code to ${email}. Continue?`);
+
 	if (userConfirm) {
 		skapi.forgotPassword({email}).then(() => {
-			this.parentElement.innerHTML = 'Verification code has been sent.'
+			parentElement.innerHTML = 'Verification code has been sent.'
 		}).catch(err => alert(err.message) );
 	}
 }
@@ -73,16 +84,4 @@ let resetPassword = (event) => {
 		router.push('/login');
 	}).catch(err=>alert(err.message))
 }
-
-onMounted(() => {
-	/*
-		The email address is passed from the forgot password page.
-		We can get the email address from the hash of the url.
-		The hash is the part of the url after the # sign.
-		We can get the hash using location.hash.
-		Then, we can set the value of the email input field for the user.
-		Email input field is hidden but it is required for the reset password method.
-	*/
-	document.querySelector('input[name=email]').value = email;
-})
 </script>
