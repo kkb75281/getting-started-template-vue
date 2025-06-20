@@ -1,13 +1,14 @@
-import { createApp } from 'vue'
-import { Skapi } from "skapi-js"
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import { Skapi } from "skapi-js";
+import App from "./App.vue";
+import router from "./router";
+import "./assets/main.css";
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)
+app.use(router);
 
-app.mount('#app')
+app.mount("#app");
 
 const SERVICE_ID = "ap22hVrjMJ2gW4Thgi5D";
 const OWNER_ID = "bf305ace-03b5-4f9d-b88f-291458748ca3";
@@ -15,7 +16,7 @@ const OWNER_ID = "bf305ace-03b5-4f9d-b88f-291458748ca3";
 let options = {
     autoLogin: true,
     eventListener: {
-        onLogin: user => {
+        onLogin: (user) => {
             if (!user) {
                 // user is not logged in.
                 // If url is welcome.html redirect to index.html
@@ -24,7 +25,7 @@ let options = {
                 }
             }
         },
-    }
-}
+    },
+};
 
 export const skapi = new Skapi(SERVICE_ID, OWNER_ID, options);
