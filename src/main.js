@@ -10,8 +10,8 @@ app.use(router);
 
 app.mount("#app");
 
-const SERVICE_ID = "ap22hVrjMJ2gW4Thgi5D";
-const OWNER_ID = "bf305ace-03b5-4f9d-b88f-291458748ca3";
+const SERVICE_ID = "ap22uU8iBbIW1G7Q7JHc";
+const OWNER_ID = "6001a0e0-bb73-4be5-83bd-a12f8d924bdf";
 
 let options = {
     autoLogin: true,
