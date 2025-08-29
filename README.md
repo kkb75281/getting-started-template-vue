@@ -1,29 +1,36 @@
-# getting-started-template-vue
+# Skapi Vue Starter Template
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a Vue.js starter template integrated with Skapi.
 
-## Recommended IDE Setup
+It includes basic features for your Vue application:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+-   Signup
+-   Signup email verification
+-   Login
 
-## Customize configuration
+## How To Run
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+1. Download or clone the project.
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+3. Start the development server:
+    ```bash
+    npm run dev
+    ```
+4. Open the provided local address (e.g., http://localhost:3300 or http://localhost:5173) in your browser.
 
-## Project Setup
+### Remote Server (Optional)
 
-```sh
-npm install
-```
+You can deploy this project to any Node.js-compatible server or static hosting service (e.g., Vercel, Netlify).
 
-### Compile and Hot-Reload for Development
+## Important!
 
-```sh
-npm run dev
-```
+Replace the `SERVICE_ID` and `OWNER_ID` values in your Skapi configuration file (e.g., `src/service.js` or wherever you configure Skapi) with your own service information.
 
-### Compile and Minify for Production
+Currently, the service is running in **Trial Mode**.
 
-```sh
-npm run build
-```
+**All user data will be deleted every 14 days.**
+
+You can get your own service ID from [Skapi](https://www.skapi.com).
