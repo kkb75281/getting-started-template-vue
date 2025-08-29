@@ -29,8 +29,4 @@ You can deploy this project to any Node.js-compatible server or static hosting s
 
 Replace the `SERVICE_ID` and `OWNER_ID` values in your Skapi configuration file (e.g., `src/service.js` or wherever you configure Skapi) with your own service information.
 
-Currently, the service is running in **Trial Mode**.
-
-**All user data will be deleted every 14 days.**
-
 You can get your own service ID from [Skapi](https://www.skapi.com).
