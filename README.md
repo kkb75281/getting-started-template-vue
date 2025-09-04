@@ -25,6 +25,10 @@ It includes basic features for your Vue application:
 
 You can deploy this project to any Node.js-compatible server or static hosting service (e.g., Vercel, Netlify).
 
+## Live Demo
+
+You can check our live demo [Here](https://getting-started-template-vue.skapi.com).
+
 ## Important!
 
 Replace the `SERVICE_ID` and `OWNER_ID` values in `src/main.js` with your own service information.
