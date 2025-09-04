@@ -6,7 +6,7 @@
 			When signup_confirmation option is set to true,
 			User will be required to confirm their email address before they can login.
             -->
-        <form @submit.prevent="signup">
+        <form @submit="signup">
             <h1>Sign Up</h1>
 
             <label for="email">Login Email</label>

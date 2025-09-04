@@ -2,7 +2,7 @@
     <main>
         <router-link to="/">Back</router-link>
 
-        <form @submit.prevent="login">
+        <form @submit="login">
             <h1>Login</h1>
 
             <label for="email">Email</label>
