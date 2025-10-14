@@ -11,12 +11,6 @@
 
         <br>
 
-        <h2>Important!</h2>
-        <p>Replace the SERVICE_ID and OWNER_ID values in src/main.js with your own service information.</p>
-        <p>You can get your own service ID from <a href='https://www.skapi.com'>Skapi</a>.</p>
-
-        <br>
-
         <p style="font-weight: bold;">Login or Sign-up below:</p>
         <router-link to="/login">Login</router-link>
         |
