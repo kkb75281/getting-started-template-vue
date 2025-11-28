@@ -11,6 +11,5 @@ app.use(router);
 app.mount("#app");
 
 const SERVICE_ID = "";
-const OWNER_ID = "";
 
-export const skapi = new Skapi(SERVICE_ID, OWNER_ID);
+export const skapi = new Skapi(SERVICE_ID);
